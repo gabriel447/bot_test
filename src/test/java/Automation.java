@@ -26,18 +26,18 @@ public class Automation {
 
         waitAndHandleException();
 
-        WebElement games = driver.findElement(By.xpath("//*[@id=\"site-content\"]/div[2]/div[5]/div/div/div/ul/li[1]/div[1]/a/div[2]/div"));
-        games.click();
+        WebElement table = driver.findElement(By.xpath("//*[@id=\"site-content\"]/div[2]/div[5]/div/div/div/ul/li[1]/div[1]/a/div[2]/div"));
+        table.click();
 
         waitAndHandleException();
 
-        List<WebElement> dados = driver.findElements(By.cssSelector("sc-cCYyox, .sc-cjERFW, .jxeAHX, .fWvmCS"));
+        List<WebElement> games = driver.findElements(By.cssSelector(".sc-cCYyox, .sc-cjERFW, .jxeAHX, .fWvmCS"));
 
         try (FileWriter writer = new FileWriter("output.txt", true)) {
-            for (WebElement dado : dados) {
-                String text = dado.getText();
+            for (WebElement game : games) {
+                String text = game.getText();
                 /*System.out.println(text);*/
-                writer.write(text + System.lineSeparator());
+                writer.write(text + System.lineSeparator() + System.lineSeparator());
             }
         } catch (IOException e) {
             e.printStackTrace();

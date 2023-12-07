@@ -31,11 +31,11 @@ public class Automation {
 
         waitAndHandleException();
 
-        List<WebElement> Datasets = driver.findElements(By.cssSelector(".sc-cCYyox, .sc-cjERFW, .jxeAHX, .fWvmCS"));
+        List<WebElement> datasets = driver.findElements(By.cssSelector(".sc-cCYyox, .sc-cjERFW, .jxeAHX, .fWvmCS"));
 
         try (FileWriter writer = new FileWriter("output.txt", true)) {
-            for (WebElement data : Datasets) {
-                String text = data.getText();
+            for (WebElement dataset : datasets) {
+                String text = dataset.getText();
                 /*System.out.println(text);*/
                 writer.write(text + System.lineSeparator() + System.lineSeparator());
             }

@@ -48,10 +48,13 @@ public class Automation {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        //close google-chrome
+        driver.quit();
     }
 
-        //standby method
-        public void waitAndHandleException() {
+    //standby method
+    public void waitAndHandleException() {
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
